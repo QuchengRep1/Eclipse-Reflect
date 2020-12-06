@@ -18,7 +18,7 @@ import com.qucheng.reflectpj.service.impl.UserServiceImpl;
 
 public class ApplicationContext<T> {
 
-	private  HashMap<Class, Object> beanFactory = new HashMap<>();
+	private  HashMap<Class, Object> beanFactory = new HashMap<Class, Object>();
 	
 	public  T getBean(Class clazz) {
 		return (T)beanFactory.get(clazz);

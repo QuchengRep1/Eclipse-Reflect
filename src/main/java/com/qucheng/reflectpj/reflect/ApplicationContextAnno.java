@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class ApplicationContextAnno {
 
-	public static Map<Class, Object> AnnoMap = new HashMap<>();
+	public static Map<Class, Object> AnnoMap = new HashMap<Class, Object>();
 	private static String filePathAnno;
 	
 	public static void loadAnno() {
@@ -37,6 +37,10 @@ public class ApplicationContextAnno {
 							if(!aClass.isInterface()) {
 								Object instance = aClass.newInstance();
 								AnnoMap.put(aClass, instance);
+								System.out.println(aClass.getName()+"---"+AnnoMap.get(aClass).toString());
+								if(aClass.getInterfaces().length > 0) {
+								System.out.println(aClass.getInterfaces()[0]+"---");
+								}
 							}	
 						}catch (ClassNotFoundException | IllegalAccessException | InstantiationException e) {
 							e.printStackTrace();
