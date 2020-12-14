@@ -44,6 +44,7 @@ public class ApplicationContextAnno {
 							}	
 						}catch (ClassNotFoundException | IllegalAccessException | InstantiationException e) {
 							e.printStackTrace();
+							
 						}
 					}
 				}
